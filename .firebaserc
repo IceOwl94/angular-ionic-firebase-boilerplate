@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "boilerplate-1b44f": {
+      "hosting": {
+        "app": [
+          "boilerplate-1b44f"
+        ]
+      }
+    }
+  }
+}
