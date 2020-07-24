@@ -19,13 +19,27 @@
         href="https://ionicframework.com/docs/components">UI Components</a></p>
 
     <ion-card>
-      <h2>Firestore message:</h2>
-      <span>message: {{(message$ | async)?.body}}</span>
-      <ion-input color="primary" value="{{(message$ | async)?.body}}" (ionChange)="messageChangeHandler($event)">
-      </ion-input>
-      <h2>Functions message:</h2>
-      <p>{{functionsMessage?.body}}</p>
-      <ion-button (click)="callCloudFunctions()">Get Message</ion-button>
+      <ion-card-header>
+        <ion-card-title>Firestore</ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content>
+        <span>message: {{message?.body}}</span>
+        <form action="#" [formGroup]="form">
+          <ion-input color="primary" formControlName="message"></ion-input>
+        </form>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Functions</ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content>
+        <p>{{functionsMessage?.body}}</p>
+        <ion-button (click)="callCloudFunctions()">Get Message</ion-button>
+      </ion-card-content>
     </ion-card>
   </div>
 </ion-content>
