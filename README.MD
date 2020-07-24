@@ -1,0 +1,2 @@
+- Enable pay-as-you-go (Blaze) billing plan
+- Set budget to 5$ or lower
