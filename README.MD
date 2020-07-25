@@ -1,6 +1,6 @@
 FE
 Angular 10 - Ionic 5
-AngularFire 6 (Auth, Firestore, Functions)
+AngularFire 6 (Auth, Firestore, Functions, Auth Guard)
 ng-sw, i18n
 
 BE
