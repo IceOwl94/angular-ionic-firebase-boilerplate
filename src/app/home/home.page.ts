@@ -4,6 +4,8 @@ import { Observable } from 'rxjs';
 import { map, tap } from 'rxjs/operators';
 import { AngularFireFunctions } from '@angular/fire/functions';
 import { FormGroup, FormBuilder } from '@angular/forms';
+import { AngularFireAuth } from '@angular/fire/auth';
+import { Router } from '@angular/router';
 
 interface Message { body: string };
 
@@ -18,9 +20,11 @@ export class HomePage implements OnInit {
   form: FormGroup;
 
   constructor(
+    private afa: AngularFireAuth,
     private afs: AngularFirestore,
     private aff: AngularFireFunctions,
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -46,4 +50,8 @@ export class HomePage implements OnInit {
     this.functionsMessage = await this.aff.httpsCallable('helloWorld')(null).toPromise();
   }
 
+  async logout() {
+    await this.afa.signOut();
+    this.router.navigate(['']);
+  }
 }

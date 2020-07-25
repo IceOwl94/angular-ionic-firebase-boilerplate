@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 export class AuthPage implements OnInit {
 
   constructor(
-    private auth: AngularFireAuth,
+    private afa: AngularFireAuth,
     private router: Router
   ) { }
 
@@ -19,12 +19,12 @@ export class AuthPage implements OnInit {
   }
 
   async authWithGoogle() {
-    const userCredential = await this.auth.signInWithPopup(new auth.GoogleAuthProvider());
+    const userCredential = await this.afa.signInWithPopup(new auth.GoogleAuthProvider());
     this.authSuccess(userCredential);
   }
 
   async authAnonymously() {
-    const userCredential = await this.auth.signInAnonymously();
+    const userCredential = await this.afa.signInAnonymously();
     this.authSuccess(userCredential);
   }
 
