@@ -1,0 +1,19 @@
+.container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .logo {
+        height: 200px;
+        width: 200px;
+        border-radius: 20px;
+        margin: 64px;
+        overflow: hidden;
+    }
+
+    ion-button {
+        width: auto;
+    }
+}
