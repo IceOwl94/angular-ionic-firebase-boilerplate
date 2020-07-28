@@ -31,10 +31,11 @@ export class HomePage implements OnInit {
     const messageRef = this.afs.doc<Message>('messages/1');
 
     this.form = this.fb.group({
-      message: ['']
+      localMessage: [''],
+      remoteMessage: [''],
     });
 
-    this.form.controls.message.valueChanges.pipe(
+    this.form.controls.localMessage.valueChanges.pipe(
       tap(x => console.log('form valueChanges', x)),
       tap(x => messageRef.set({ body: x }))
     ).subscribe();
@@ -42,7 +43,7 @@ export class HomePage implements OnInit {
     messageRef.valueChanges().pipe(
       tap(x => console.log('messageRef valueChanges', x)),
       tap(x => this.message = x),
-      tap(x => this.form.controls.message.setValue(x.body, { emitEvent: false }))
+      tap(x => this.form.controls.remoteMessage.setValue(x.body, { emitEvent: false }))
     ).subscribe();
   }
 

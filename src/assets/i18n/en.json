@@ -1,0 +1,9 @@
+{
+    "auth.signInWithGoogle": "Sign in with Google",
+    "auth.signInAnonymously": "Sign in Anonymously",
+    "home.header.title": "App Name",
+    "home.firestore.localMessage": "Local message",
+    "home.firestore.remoteMessage": "Remote message",
+    "home.functions.getMessage": "Get message",
+    "home.logout": "Log out"
+}

@@ -1,33 +1,27 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Blank
+    <ion-title translate>
+      home.header.title
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer"
-        href="https://ionicframework.com/docs/components">UI Components</a></p>
+<ion-content fullscreen>
+  <form action="#" [formGroup]="form">
 
     <ion-card>
       <ion-card-header>
         <ion-card-title>Firestore</ion-card-title>
       </ion-card-header>
-
       <ion-card-content>
-        <span>message: {{message?.body}}</span>
-        <form action="#" [formGroup]="form">
-          <ion-input color="primary" formControlName="message"></ion-input>
-        </form>
+        <ion-item>
+          <ion-label position="stacked" translate>home.firestore.localMessage</ion-label>
+          <ion-input formControlName="localMessage"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked" translate>home.firestore.remoteMessage</ion-label>
+          <ion-input formControlName="remoteMessage" readonly></ion-input>
+        </ion-item>
       </ion-card-content>
     </ion-card>
 
@@ -35,17 +29,14 @@
       <ion-card-header>
         <ion-card-title>Functions</ion-card-title>
       </ion-card-header>
-
-      <ion-card-content>
-        <p>{{functionsMessage?.body}}</p>
-        <ion-button (click)="callCloudFunctions()">Get Message</ion-button>
+      <ion-card-content class="ion-text-center">
+        <ion-button (click)="callCloudFunctions()" translate>home.functions.getMessage</ion-button>
+        <div>{{functionsMessage?.body}}</div>
       </ion-card-content>
     </ion-card>
 
-    <ion-card>
-      <ion-card-content>
-        <ion-button color="danger" (click)="logout()">Log out</ion-button>
-      </ion-card-content>
-    </ion-card>
-  </div>
+    <div class="ion-text-center">
+      <ion-button color="danger" (click)="logout()" translate>home.logout</ion-button>
+    </div>
+  </form>
 </ion-content>
