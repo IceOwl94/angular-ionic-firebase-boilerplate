@@ -1,8 +1,8 @@
 {
-  "name": "angular-ionic-firestore-boilerplate",
+  "name": "angular-ionic-firebase-boilerplate",
   "version": "0.0.1",
-  "author": "Ionic Framework",
-  "homepage": "https://ionicframework.com/",
+  "author": "Thomas De Zordi",
+  "homepage": "https://github.com/IceOwl94",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
